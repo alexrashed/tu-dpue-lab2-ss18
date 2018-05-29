@@ -5,6 +5,7 @@ import sys
 import requests
 import json
 import uuid
+import urllib.request
 
 parser = argparse.ArgumentParser()
 parser.add_argument("command", help="Choose ldspace for the list of datasets in the dspace repository, lckan for the list of datasets in the ckan-repository and migrate to migrate data from ckan to dspace.")
@@ -112,32 +113,13 @@ def migrate():
         sys.exit(1)
 
     # Create the multimedia schema in DSpace
-    #TODO enable: create_schema(dspace_session)
+    create_schema(dspace_session)
 
     # Create the communities in DSpace
     create_communities(dspace_session)
 
     # Create the items
     create_items(dspace_session)
-
-    '''
-    # Get the groups
-    groups_response = requests.get(ckan_server_URL + "/api/3/action/group_list")
-    if not groups_response.ok:
-        print("CKAN groups could not be read: " + str(groups_response.status_code))
-        sys.exit(1)
-    groups_keys = groups_response.json()["result"]
-
-    # Iterate over the groups
-    for group_key in groups_keys:
-        group_response = requests.get(ckan_server_URL + "/api/3/action/group_show?id=" + group_key)
-        if not group_response.ok:
-            print("CKAN group info could not be read: " + str(group_response.status_code))
-            sys.exit(1)
-        group = group_response.json()["result"]
-        print(group)
-    '''
-
 
 
 def create_schema(session):
@@ -146,13 +128,14 @@ def create_schema(session):
 
     :param session: current requests session (has to be logged in to DSpace)
     """
-    schema_get_response = session.get(dspace_server_URL + "/rest/registries/schema/multimedia")
+    # TODO switch to multimedia and test
+    schema_prefix = "multimedia1"
+    schema_get_response = session.get(dspace_server_URL + "/rest/registries/schema/" + schema_prefix)
     if schema_get_response.ok:
         print("Schema already exists.")
         return
 
-    schema_prefix = "multimedia"
-    schema_creation_payload = {'namespace': 'http://tuwien.ac.at/dpue/multimedia', "prefix": schema_prefix}
+    schema_creation_payload = {'namespace': 'http://tuwien.ac.at/dpue/' + schema_prefix, "prefix": schema_prefix}
     schema_creation_headers = {'Content-Type': 'application/json'}
     schema_creation_response = session.post(dspace_server_URL + "/rest/registries/schema/",
                                             headers=schema_creation_headers,
@@ -216,7 +199,7 @@ def create_communities(dspace_session):
                 print("DSpace community could not be created: " + str(dspace_response.status_code))
                 sys.exit(1)
             community_ids[key] = dspace_response.json()["uuid"]
-            print("Created community with UUID " + community_ids[key])
+            print("Created DSpace community with UUID " + community_ids[key])
 
 
 def create_items(dspace_session):
@@ -236,41 +219,38 @@ def create_items(dspace_session):
         package = package_response.json()["result"]
 
         community = community_ids[package["organization"]["name"]]
+        collection_id = get_or_create_collection_id(dspace_session, community, package["groups"])
+
         data = json.dumps({
             'name': package["name"]
         })
-        collection_id = get_or_create_collection_id(dspace_session, community, package["groups"])
-        dspace_headers = {'Content-Type': 'application/json'}
-        dspace_response = dspace_session.post(dspace_server_URL + "/rest/collections/" + collection_id,
+        print("Creating DSpace item " + data + " in collection with ID " + collection_id)
+        dspace_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        dspace_response = dspace_session.post(dspace_server_URL + "/rest/collections/" + collection_id + "/items",
                                               headers=dspace_headers, data=data)
         if not dspace_response.ok:
             print("DSpace item could not be created: " + str(dspace_response.status_code))
-            #sys.exit(1)
+            sys.exit(1)
 
-        # If item is in a group: Collection name is group
-        # Else: Collection name is default (maybe orga name?)
+        item_id = dspace_response.json()["uuid"]
+        print("Created DSpace item with ID " + item_id)
 
-        # if collection name does not exist, create the collection
-        # POST /communities/{communityId}/collections - Create new collections in community. You must post Collection.
+        if not package["resources"]:
+            print("Package does not contain any resources, continue.")
+            continue
 
-        # Create the Item in DSPACE
-        # POST /collections/{collectionId}/items - Create posted item in collection. You must post an Item
-        # POST /items/{item id}/bitstreams - Add bitstream to item. You must post a Bitstream.
+        # Add the bitstreams
+        for resource in package["resources"]:
+            create_bitstreams(dspace_session, item_id, resource)
 
-        # Download the file from CKAN, upload the file (bitstream) to DSPACE
-            # https://stackoverflow.com/questions/33055773/adding-a-new-bitstream-to-dspace-item-using-dspace-rest-api
-            # https://github.com/DSpace/DSpace/blob/master/dspace-rest/src/main/java/org/dspace/rest/BitstreamResource.java
-            # PUT /bitstreams/{bitstream id}/data - Update data/file of bitstream. You must put the data
+        # TODO: Add all additional data of the item (besides the name)
 
+        # TODO: Add extras (additional metadata for multimedia)
         # If there is a custom schema:
-            # If the schema does not exist in dspace yet:
-                # Create the new schema
-                # POST /registries/schema/ - Add a schema to the schema registry
-                # Create the additional metadata
-                # POST /registries/schema/{schema_prefix}/metadata-fields - Add a metadata field to the specified schema
             # Add the additional metadata to the DSPACE item
                 # POST /items/{item id}/metadata - Add metadata to item. You must post an array of MetadataEntry.
-        # Invoke refreshing the index / solr
+
+        # TODO: Invoke refreshing the index / solr
 
 
 def get_or_create_collection_id(dspace_session, community, groups):
@@ -296,7 +276,7 @@ def get_or_create_collection_id(dspace_session, community, groups):
         except KeyError:
             collection = {"name": groups[0]["display_name"], "shortDescription": groups[0]["description"]}
 
-    print("Creating a new DSpace collection for community with ID " + community + ": " + str(collection))
+    print("Creating DSpace collection for community with ID " + community + ": " + str(collection))
     dspace_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
     dspace_response = dspace_session.post(dspace_server_URL + "/rest/communities/" + community + "/collections",
                                           headers=dspace_headers, data=json.dumps(collection))
@@ -305,7 +285,7 @@ def get_or_create_collection_id(dspace_session, community, groups):
         sys.exit(1)
 
     new_id = dspace_response.json()["uuid"]
-    print("Created collection with UUID " + new_id)
+    print("Created DSpace collection with UUID " + new_id)
 
     # Store the new id to prevent duplicated collections
     if not groups:
@@ -316,6 +296,44 @@ def get_or_create_collection_id(dspace_session, community, groups):
         except KeyError:
             collection_ids[community] = {groups[0]["name"] : new_id}
     return new_id
+
+
+def create_bitstreams(dspace_session, item_id, resource):
+    data = json.dumps({
+        'name': resource["name"],
+        'format': resource["format"],
+        'mimetype': resource["mimetype"],
+        'description': resource["description"]
+    })
+    print("Creating DSpace bitstream " + data + " for item with ID " + item_id)
+    dspace_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+    dspace_response = dspace_session.post(dspace_server_URL + "/rest/items/" + item_id + "/bitstreams?name=" + resource["name"],
+                                          headers=dspace_headers, data=data)
+    if not dspace_response.ok:
+        print("DSpace bitstream could not be created: " + str(dspace_response.status_code))
+        sys.exit(1)
+
+    bitstream_id = dspace_response.json()["uuid"]
+    print("Created DSpace bitstream with ID " + bitstream_id)
+
+    dspace_headers = {'Content-Type': 'multipart/form-data', 'Accept': 'application/json'}
+    data = urllib.request.urlopen(resource["url"]).read()
+    dspace_response = dspace_session.put(dspace_server_URL + "/rest/bitstreams/" + bitstream_id + "/data?name=" + resource["name"],
+                                          headers=dspace_headers, files={'bitstreams': data})
+    if not dspace_response.ok:
+        print("DSpace bitstream data could not be written: " + str(dspace_response.status_code))
+        sys.exit(1)
+    print("Created DSpace bitstream data for bitstream with ID " + bitstream_id)
+
+    # POST /items/{item id}/bitstreams - Add bitstream to item. You must post a Bitstream.
+    # PUT /bitstreams/{bitstream id}/data - Update data/file of bitstream. You must put the data
+
+
+    # TODO: Add bitstream
+    # Download the file from CKAN, upload the file (bitstream) to DSPACE
+    # https://stackoverflow.com/questions/33055773/adding-a-new-bitstream-to-dspace-item-using-dspace-rest-api
+    # https://github.com/DSpace/DSpace/blob/master/dspace-rest/src/main/java/org/dspace/rest/BitstreamResource.java
+    # PUT /bitstreams/{bitstream id}/data - Update data/file of bitstream. You must put the data
 
 
 
