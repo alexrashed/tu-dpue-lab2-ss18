@@ -1,8 +1,0 @@
----
-:hierarchy:
-    - local
-    - default
-:backends:
-    - yaml
-:yaml:
-    :datadir: /vagrant/config

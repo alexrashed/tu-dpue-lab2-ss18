@@ -1,0 +1,74 @@
+Creating DSpace community for CKAN organization: organization-for-tests
+Created DSpace community with UUID b1fdba67-0a0c-445a-ae5b-eaae1de3c316
+Creating DSpace collection for community with ID b1fdba67-0a0c-445a-ae5b-eaae1de3c316: {'name': '33e875a2-5557-49de-b927-9271af66ce7a'}
+Created DSpace collection with UUID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+{'key': 'Bitrate', 'value': '19.7'}
+{'key': 'Length', 'value': '6'}
+Creating DSpace item {"name": "audio-sample-1", "metadata": [{"key": "dc.title", "value": "Audio Sample 1"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Audio Sample for DPUE 2"}, {"key": "audiovisual.Bitrate.Bitrate", "value": "19.7"}, {"key": "audiovisual.Length.Length", "value": "6"}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID 90ad433f-917b-4a5c-9e7b-b922fd1a1a42
+Creating DSpace bitstream {"name": "audio_2018-05-21_13-58-10.ogg", "mimeType": "audio/ogg", "metadata": [{"key": "dc.title", "value": "audio_2018-05-21_13-58-10.ogg"}, {"key": "dc.format", "value": "audio/ogg"}, {"key": "dc.format.mimetype", "value": "audio/ogg"}, {"key": "dc.description", "value": "Audio File Recorded for DPUE Task 2."}]} for item with ID 90ad433f-917b-4a5c-9e7b-b922fd1a1a42
+Created DSpace bitstream with ID 86a6f5e6-72e7-4a8c-bbc2-101e0074c1fa
+Created DSpace bitstream data for bitstream with ID 86a6f5e6-72e7-4a8c-bbc2-101e0074c1fa
+{'key': 'Bitrate', 'value': '20'}
+{'key': 'Length', 'value': '5'}
+Creating DSpace item {"name": "audio-sample-2", "metadata": [{"key": "dc.title", "value": "Audio Sample 2"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Audio Sample for DPUE 2"}, {"key": "audiovisual.Bitrate.Bitrate", "value": "20"}, {"key": "audiovisual.Length.Length", "value": "5"}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID 0ea556b6-c81b-4c01-8fb6-3d58abcc1975
+Creating DSpace bitstream {"name": "audio_2018-05-21_13-58-24.ogg", "mimeType": "audio/ogg", "metadata": [{"key": "dc.title", "value": "audio_2018-05-21_13-58-24.ogg"}, {"key": "dc.format", "value": "audio/ogg"}, {"key": "dc.format.mimetype", "value": "audio/ogg"}, {"key": "dc.description", "value": "Audio File Recorded for DPUE Task 2."}]} for item with ID 0ea556b6-c81b-4c01-8fb6-3d58abcc1975
+Created DSpace bitstream with ID cdf7cb34-4f3f-4595-900f-33e002c4759d
+Created DSpace bitstream data for bitstream with ID cdf7cb34-4f3f-4595-900f-33e002c4759d
+Creating DSpace item {"name": "coding-sample-1", "metadata": [{"key": "dc.title", "value": "Coding Sample 1"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Coding Sample from DPUE 1.2"}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID 02a27f97-99eb-482c-9dff-672847995d25
+Creating DSpace bitstream {"name": "app.component.ts", "mimeType": "video/MP2T", "metadata": [{"key": "dc.title", "value": "app.component.ts"}, {"key": "dc.format", "value": "video/MP2T"}, {"key": "dc.format.mimetype", "value": "video/MP2T"}, {"key": "dc.description", "value": "Main class of DPUE Project 1."}]} for item with ID 02a27f97-99eb-482c-9dff-672847995d25
+Created DSpace bitstream with ID 2b8f821c-5c91-4b65-bcf8-17c485fa607a
+Created DSpace bitstream data for bitstream with ID 2b8f821c-5c91-4b65-bcf8-17c485fa607a
+Creating DSpace collection for community with ID b1fdba67-0a0c-445a-ae5b-eaae1de3c316: {'name': 'Digital Preservation - SS18 - Lab 1.1 - Students Analysis', 'shortDescription': 'Combination of different datasets to create a comparison of the total number of students in Germany and Austria from the winter semester 2003 to 2016.'}
+Created DSpace collection with UUID 544fa3e0-f487-4e0d-989f-7cd248adbeac
+Creating DSpace item {"name": "coding-sample-2", "metadata": [{"key": "dc.title", "value": "Coding Sample 2"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Coding Sample from DPUE 1.1"}]} in collection with ID 544fa3e0-f487-4e0d-989f-7cd248adbeac
+Created DSpace item with ID 4baa5b8d-411d-4ebf-9f94-9f4239454e7c
+Creating DSpace bitstream {"name": "analyze.py", "mimeType": "text/x-python", "metadata": [{"key": "dc.title", "value": "analyze.py"}, {"key": "dc.format", "value": "text/x-python"}, {"key": "dc.format.mimetype", "value": "text/x-python"}, {"key": "dc.description", "value": "Analyzing Program used in DPUE Task 1."}]} for item with ID 4baa5b8d-411d-4ebf-9f94-9f4239454e7c
+Created DSpace bitstream with ID a8e60ecb-16dd-4872-8c06-6cc59b6a3e52
+Created DSpace bitstream data for bitstream with ID a8e60ecb-16dd-4872-8c06-6cc59b6a3e52
+Creating DSpace item {"name": "data-sample-2-csv", "metadata": [{"key": "dc.title", "value": "Data Sample 2 CSV"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "CSV generated in DPUE Task 1"}]} in collection with ID 544fa3e0-f487-4e0d-989f-7cd248adbeac
+Created DSpace item with ID 39a6fc8e-7093-43f9-97bf-e82d61b00993
+Creating DSpace bitstream {"name": "data.csv", "mimeType": "text/csv", "metadata": [{"key": "dc.title", "value": "data.csv"}, {"key": "dc.format", "value": "CSV"}, {"key": "dc.format.mimetype", "value": "text/csv"}, {"key": "dc.description", "value": "Generated Dataset from DPUE Task 1"}]} for item with ID 39a6fc8e-7093-43f9-97bf-e82d61b00993
+Created DSpace bitstream with ID 1f1a472d-2fcb-4d92-b931-4d7675cce8f1
+Created DSpace bitstream data for bitstream with ID 1f1a472d-2fcb-4d92-b931-4d7675cce8f1
+Creating DSpace item {"name": "data-sample-csv", "metadata": [{"key": "dc.title", "value": "Data Sample CSV"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "A generated CSV-Dataset with nonsensical information "}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID dfe357a1-373e-4491-b2dc-c11b76cd344e
+Creating DSpace bitstream {"name": "2017-01-sample.csv", "mimeType": "text/csv", "metadata": [{"key": "dc.title", "value": "2017-01-sample.csv"}, {"key": "dc.format", "value": "CSV"}, {"key": "dc.format.mimetype", "value": "text/csv"}, {"key": "dc.description", "value": "Generated nonsensical data"}]} for item with ID dfe357a1-373e-4491-b2dc-c11b76cd344e
+Created DSpace bitstream with ID 22836b01-365d-4e1b-a0cd-785c8c25bc29
+Created DSpace bitstream data for bitstream with ID 22836b01-365d-4e1b-a0cd-785c8c25bc29
+Creating DSpace item {"name": "document-sample-1", "metadata": [{"key": "dc.title", "value": "Document Sample 1"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Document Sample for DPUE 1, containing the Exercise PDF of Task 2"}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID 49535a2e-c815-4687-9db0-892f81b08d51
+Creating DSpace bitstream {"name": "Exercise2.pdf", "mimeType": "application/pdf", "metadata": [{"key": "dc.title", "value": "Exercise2.pdf"}, {"key": "dc.format", "value": "PDF"}, {"key": "dc.format.mimetype", "value": "application/pdf"}, {"key": "dc.description", "value": "Exercise PDF of Task 2."}]} for item with ID 49535a2e-c815-4687-9db0-892f81b08d51
+Created DSpace bitstream with ID a524e1fd-fcda-4498-bfbc-afb943f90482
+Created DSpace bitstream data for bitstream with ID a524e1fd-fcda-4498-bfbc-afb943f90482
+Creating DSpace item {"name": "document-sample-2", "metadata": [{"key": "dc.title", "value": "Document Sample 2"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Document Sample for DPUE 2"}]} in collection with ID 544fa3e0-f487-4e0d-989f-7cd248adbeac
+Created DSpace item with ID 581f9b4a-fb63-4fc9-8e8f-0aa505024942
+Creating DSpace bitstream {"name": "README.pdf", "mimeType": "application/pdf", "metadata": [{"key": "dc.title", "value": "README.pdf"}, {"key": "dc.format", "value": "PDF"}, {"key": "dc.format.mimetype", "value": "application/pdf"}, {"key": "dc.description", "value": "Readme of Task 1 of DPUE."}]} for item with ID 581f9b4a-fb63-4fc9-8e8f-0aa505024942
+Created DSpace bitstream with ID 7967e0bc-d424-40e6-b872-a1a91346d783
+Created DSpace bitstream data for bitstream with ID 7967e0bc-d424-40e6-b872-a1a91346d783
+Creating DSpace item {"name": "license-selector-screenshot", "metadata": [{"key": "dc.title", "value": "License Selector Screenshot"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "A screenshot of the License-Selector"}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID 298a5fbb-f5f0-4dfe-a5e1-82590de46fd6
+Creating DSpace bitstream {"name": "6.png", "mimeType": "image/png", "metadata": [{"key": "dc.title", "value": "6.png"}, {"key": "dc.format", "value": "PNG"}, {"key": "dc.format.mimetype", "value": "image/png"}, {"key": "dc.description", "value": "Screenshot of License Selector"}]} for item with ID 298a5fbb-f5f0-4dfe-a5e1-82590de46fd6
+Created DSpace bitstream with ID ed9cc833-219b-4701-a823-5efc76dd74ce
+Created DSpace bitstream data for bitstream with ID ed9cc833-219b-4701-a823-5efc76dd74ce
+Creating DSpace item {"name": "students-graphic", "metadata": [{"key": "dc.title", "value": "Students Graphic"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "A Graphic comparing student enrollments in Germany and Austria"}]} in collection with ID 544fa3e0-f487-4e0d-989f-7cd248adbeac
+Created DSpace item with ID d9e23619-4f8d-4bb6-b8e4-6e11dabcea4d
+Creating DSpace bitstream {"name": "students.png", "mimeType": "image/png", "metadata": [{"key": "dc.title", "value": "students.png"}, {"key": "dc.format", "value": "PNG"}, {"key": "dc.format.mimetype", "value": "image/png"}, {"key": "dc.description", "value": "A Graphic comparing student enrollments in Germany and Austria."}]} for item with ID d9e23619-4f8d-4bb6-b8e4-6e11dabcea4d
+Created DSpace bitstream with ID 97f712b0-b283-4537-888f-6d974c8b178e
+Created DSpace bitstream data for bitstream with ID 97f712b0-b283-4537-888f-6d974c8b178e
+{'key': 'Bitrate', 'value': '541'}
+{'key': 'Length', 'value': '10'}
+Creating DSpace item {"name": "video-sample-1", "metadata": [{"key": "dc.title", "value": "Video Sample 1"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Video Sample for DPUE 2"}, {"key": "audiovisual.Bitrate.Bitrate", "value": "541"}, {"key": "audiovisual.Length.Length", "value": "10"}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID 503f5f07-097b-420e-a80b-3b71a165663a
+Creating DSpace bitstream {"name": "video_2017-07-04_21-19-20.mp4", "mimeType": "video/mp4", "metadata": [{"key": "dc.title", "value": "video_2017-07-04_21-19-20.mp4"}, {"key": "dc.format", "value": "video/mp4"}, {"key": "dc.format.mimetype", "value": "video/mp4"}, {"key": "dc.description", "value": "Personal Video File used for DPUE Task 2."}]} for item with ID 503f5f07-097b-420e-a80b-3b71a165663a
+Created DSpace bitstream with ID cd838c4d-d6a3-4f97-bc2a-4498c8917102
+Created DSpace bitstream data for bitstream with ID cd838c4d-d6a3-4f97-bc2a-4498c8917102
+{'key': 'Bitrate', 'value': '1730'}
+{'key': 'Length', 'value': '7'}
+Creating DSpace item {"name": "video-sample-2", "metadata": [{"key": "dc.title", "value": "Video Sample 2"}, {"key": "dc.rights.license", "value": "Creative Commons Attribution, http://www.opendefinition.org/licenses/cc-by"}, {"key": "dc.contributor.author", "value": "Georg Hagmann, georg.hagmann@tuwien.ac.at"}, {"key": "dc.description.version", "value": "1.0"}, {"key": "dc.description.abstract", "value": "Video Sample for DPUE 2"}, {"key": "audiovisual.Bitrate.Bitrate", "value": "1730"}, {"key": "audiovisual.Length.Length", "value": "7"}]} in collection with ID 22cd32e5-fc22-4eba-aceb-51da1e30328d
+Created DSpace item with ID a1f2079e-c19a-4681-900e-acf7e8a0edde
+Creating DSpace bitstream {"name": "video_2018-03-15_19-47-59.mp4", "mimeType": "video/mp4", "metadata": [{"key": "dc.title", "value": "video_2018-03-15_19-47-59.mp4"}, {"key": "dc.format", "value": "video/mp4"}, {"key": "dc.format.mimetype", "value": "video/mp4"}, {"key": "dc.description", "value": "Personal Video File used for DPUE Task 2."}]} for item with ID a1f2079e-c19a-4681-900e-acf7e8a0edde
+Created DSpace bitstream with ID d4856b38-9946-4896-b119-0622f643c2ce
+Created DSpace bitstream data for bitstream with ID d4856b38-9946-4896-b119-0622f643c2ce

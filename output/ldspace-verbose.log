@@ -1,0 +1,276 @@
+{
+    "uuid": "90ad433f-917b-4a5c-9e7b-b922fd1a1a42",
+    "name": "Audio Sample 1",
+    "handle": "123456789/3",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:08.769",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/90ad433f-917b-4a5c-9e7b-b922fd1a1a42",
+    "metadata": null
+}
+{
+    "uuid": "0ea556b6-c81b-4c01-8fb6-3d58abcc1975",
+    "name": "Audio Sample 2",
+    "handle": "123456789/4",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:10.168",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/0ea556b6-c81b-4c01-8fb6-3d58abcc1975",
+    "metadata": null
+}
+{
+    "uuid": "02a27f97-99eb-482c-9dff-672847995d25",
+    "name": "Coding Sample 1",
+    "handle": "123456789/5",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:11.111",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/02a27f97-99eb-482c-9dff-672847995d25",
+    "metadata": null
+}
+{
+    "uuid": "4baa5b8d-411d-4ebf-9f94-9f4239454e7c",
+    "name": "Coding Sample 2",
+    "handle": "123456789/7",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:12.122",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/4baa5b8d-411d-4ebf-9f94-9f4239454e7c",
+    "metadata": null
+}
+{
+    "uuid": "39a6fc8e-7093-43f9-97bf-e82d61b00993",
+    "name": "Data Sample 2 CSV",
+    "handle": "123456789/8",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:12.945",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/39a6fc8e-7093-43f9-97bf-e82d61b00993",
+    "metadata": null
+}
+{
+    "uuid": "dfe357a1-373e-4491-b2dc-c11b76cd344e",
+    "name": "Data Sample CSV",
+    "handle": "123456789/9",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:13.656",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/dfe357a1-373e-4491-b2dc-c11b76cd344e",
+    "metadata": null
+}
+{
+    "uuid": "49535a2e-c815-4687-9db0-892f81b08d51",
+    "name": "Document Sample 1",
+    "handle": "123456789/10",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:14.358",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/49535a2e-c815-4687-9db0-892f81b08d51",
+    "metadata": null
+}
+{
+    "uuid": "581f9b4a-fb63-4fc9-8e8f-0aa505024942",
+    "name": "Document Sample 2",
+    "handle": "123456789/11",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:15.147",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/581f9b4a-fb63-4fc9-8e8f-0aa505024942",
+    "metadata": null
+}
+{
+    "uuid": "298a5fbb-f5f0-4dfe-a5e1-82590de46fd6",
+    "name": "License Selector Screenshot",
+    "handle": "123456789/12",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:15.856",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/298a5fbb-f5f0-4dfe-a5e1-82590de46fd6",
+    "metadata": null
+}
+{
+    "uuid": "d9e23619-4f8d-4bb6-b8e4-6e11dabcea4d",
+    "name": "Students Graphic",
+    "handle": "123456789/13",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:16.498",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/d9e23619-4f8d-4bb6-b8e4-6e11dabcea4d",
+    "metadata": null
+}
+{
+    "uuid": "503f5f07-097b-420e-a80b-3b71a165663a",
+    "name": "Video Sample 1",
+    "handle": "123456789/14",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:17.228",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/503f5f07-097b-420e-a80b-3b71a165663a",
+    "metadata": null
+}
+{
+    "uuid": "a1f2079e-c19a-4681-900e-acf7e8a0edde",
+    "name": "Video Sample 2",
+    "handle": "123456789/15",
+    "type": "item",
+    "expand": [
+        "metadata",
+        "parentCollection",
+        "parentCollectionList",
+        "parentCommunityList",
+        "bitstreams",
+        "all"
+    ],
+    "lastModified": "2018-05-29 16:58:18.083",
+    "parentCollection": null,
+    "parentCollectionList": null,
+    "parentCommunityList": null,
+    "bitstreams": null,
+    "archived": "true",
+    "withdrawn": "false",
+    "link": "/rest/items/a1f2079e-c19a-4681-900e-acf7e8a0edde",
+    "metadata": null
+}
