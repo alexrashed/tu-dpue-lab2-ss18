@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import configparser
 import argparse
 import sys
@@ -34,7 +35,6 @@ dataset_dict = {
     "title": "Data Sample CSV",
 }
 
-
 mysite = RemoteCKAN(ckan_server_URL, apikey=ckan_api_key)
 
 mysite.call_action('organization_create', dataset_organization)
@@ -44,19 +44,19 @@ mysite.action.resource_create(
     package_id='data-sample-csv',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='2017-01-sample.csv',
-    description = 'Generated nonsensical data',
+    description='Generated nonsensical data',
     upload=open('./RepositoryContents/2017-01-sample.csv', 'rb'))
 
 dataset_dict['name'] = 'data-sample-2-csv'
 dataset_dict['notes'] = 'CSV generated in DPUE Task 1'
-dataset_dict["url"] =  "https://github.com/alexrashed/tu-dpue-lab1-ss18/blob/master/output/data.csv"
+dataset_dict["url"] = "https://github.com/alexrashed/tu-dpue-lab1-ss18/blob/master/output/data.csv"
 dataset_dict['title'] = "Data Sample 2 CSV"
 mysite.call_action('package_create', dataset_dict)
 mysite.action.resource_create(
     package_id='data-sample-2-csv',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='data.csv',
-    description = 'Generated Dataset from DPUE Task 1',
+    description='Generated Dataset from DPUE Task 1',
     upload=open('./RepositoryContents/data.csv', 'rb'))
 
 dataset_dict.pop("url")
@@ -69,7 +69,7 @@ mysite.action.resource_create(
     package_id='license-selector-screenshot',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='6.png',
-    description = 'Screenshot of License Selector',
+    description='Screenshot of License Selector',
     upload=open('./RepositoryContents/6.png', 'rb'))
 
 dataset_dict['name'] = "students-graphic"
@@ -81,7 +81,7 @@ mysite.action.resource_create(
     package_id='students-graphic',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='students.png',
-    description = 'A Graphic comparing student enrollments in Germany and Austria.',
+    description='A Graphic comparing student enrollments in Germany and Austria.',
     upload=open('./RepositoryContents/students.png', 'rb'))
 dataset_dict['name'] = "coding-sample-1"
 dataset_dict['notes'] = "Coding Sample from DPUE 1.2"
@@ -93,7 +93,7 @@ mysite.action.resource_create(
     package_id='coding-sample-1',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='app.component.ts',
-    description = 'Main class of DPUE Project 1.',
+    description='Main class of DPUE Project 1.',
     upload=open('./RepositoryContents/app.component.ts', 'rb'))
 dataset_dict['name'] = "coding-sample-2"
 dataset_dict['title'] = "Coding Sample 2"
@@ -105,7 +105,7 @@ mysite.action.resource_create(
     package_id='coding-sample-2',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='analyze.py',
-    description = 'Analyzing Program used in DPUE Task 1.',
+    description='Analyzing Program used in DPUE Task 1.',
     upload=open('./RepositoryContents/analyze.py', 'rb'))
 dataset_dict['name'] = "audio-sample-1"
 dataset_dict['title'] = "Audio Sample 1"
@@ -117,7 +117,7 @@ mysite.action.resource_create(
     package_id='audio-sample-1',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='audio_2018-05-21_13-58-10.ogg',
-    description = 'Audio File Recorded for DPUE Task 2.',
+    description='Audio File Recorded for DPUE Task 2.',
     upload=open('./RepositoryContents/audio_2018-05-21_13-58-10.ogg', 'rb'))
 dataset_dict['name'] = "audio-sample-2"
 dataset_dict['title'] = "Audio Sample 2"
@@ -128,7 +128,7 @@ mysite.action.resource_create(
     package_id='audio-sample-2',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='audio_2018-05-21_13-58-24.ogg',
-    description = 'Audio File Recorded for DPUE Task 2.',
+    description='Audio File Recorded for DPUE Task 2.',
     upload=open('./RepositoryContents/audio_2018-05-21_13-58-24.ogg', 'rb'))
 dataset_dict['name'] = "video-sample-1"
 dataset_dict['title'] = "Video Sample 1"
@@ -139,7 +139,7 @@ mysite.action.resource_create(
     package_id='video-sample-1',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='video_2017-07-04_21-19-20.mp4',
-    description = 'Personal Video File used for DPUE Task 2.',
+    description='Personal Video File used for DPUE Task 2.',
     upload=open('./RepositoryContents/video_2017-07-04_21-19-20.mp4', 'rb'))
 dataset_dict['name'] = "video-sample-2"
 dataset_dict['title'] = "Video Sample 2"
@@ -150,7 +150,7 @@ mysite.action.resource_create(
     package_id='video-sample-2',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='video_2018-03-15_19-47-59.mp4',
-    description = 'Personal Video File used for DPUE Task 2.',
+    description='Personal Video File used for DPUE Task 2.',
     upload=open('./RepositoryContents/video_2018-03-15_19-47-59.mp4', 'rb'))
 
 dataset_dict['name'] = "document-sample-1"
@@ -162,7 +162,7 @@ mysite.action.resource_create(
     package_id='document-sample-1',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='Exercise2.pdf',
-    description = 'Exercise PDF of Task 2.',
+    description='Exercise PDF of Task 2.',
     upload=open('./RepositoryContents/Exercise2.pdf', 'rb'))
 
 dataset_dict['name'] = "document-sample-2"
@@ -174,16 +174,13 @@ mysite.action.resource_create(
     package_id='document-sample-2',
     url='dummy-value',  # ignored but required by CKAN<2.6
     name='README.pdf',
-    description = 'Readme of Task 1 of DPUE.',
+    description='Readme of Task 1 of DPUE.',
     upload=open('./RepositoryContents/README.pdf', 'rb'))
 
-
-
-
-
-
-
-
-
-
-
+mysite.action.group_create(
+    name='dpue-lab1',
+    title='Digital Preservation - SS18 - Lab 1.1 - Students Analysis',
+    url='dummy-value',  # ignored but required by CKAN<2.6
+    description='Combination of different datasets to create a comparison of the total number of students in Germany '
+                'and Austria from the winter semester 2003 to 2016.',
+    packages=[{'id': 'data-sample-2-csv'}, {'id': 'students-graphic'}, {'id': 'coding-sample-2'}])

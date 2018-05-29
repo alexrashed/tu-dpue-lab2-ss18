@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import configparser
 import argparse
 import sys
@@ -177,13 +178,12 @@ mysite.action.resource_create(
     description = 'Readme of Task 1 of DPUE.',
     upload=open('./RepositoryContents/README.pdf', 'rb'))
 
-
-
-
-
-
-
-
-
-
-
+'''
+mysite.action.group_create(
+    name='dpue-lab1-1',
+    title='Digital Preservation - SS18 - Lab 1.1 - Students Analysis',
+    url='dummy-value',  # ignored but required by CKAN<2.6
+    description='Combination of different datasets to create a comparison of the total number of students in Germany '
+                'and Austria from the winter semester 2003 to 2016.',
+    packages=[{'id': 'data-sample-2-csv'}, {'id': 'students-graphic'}, {'id': 'coding-sample-2'}])
+'''

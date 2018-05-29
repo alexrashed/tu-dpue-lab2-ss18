@@ -1,0 +1,51 @@
+# CKAN
+cd Repos
+git clone https://github.com/ckan/ckan.git
+cd ckan
+cp ~/Uni/DP/DPUE2/lab2/.env ckan/contrib/docker/.env
+git checkout ckan-2.8.0
+cd contrib/docker
+docker-compose up -d --build
+cd ~/Uni/DP/DPUE2/Scripts
+chmod +x *.py
+pip3 install certifi chardet ckanapi docopt idna requests urllib3 # Piplock restricts to Python 3.5, I'm using 3.6
+docker exec -it ckan /usr/local/bin/ckan-paster --plugin=ckan sysadmin -c /etc/ckan/production.ini add admin # use 'password' as pwd
+# Creating user: 'admin'
+#{'about': None,
+# 'activity_streams_email_notifications': False,
+# 'apikey': u'9d927371-471c-485a-9d6d-27ae7ec8cbfd',
+# 'created': '2018-05-29T06:57:45.948137',
+# 'display_name': u'admin',
+# 'email': u'alexander.rashed@tuwien.ac.at',
+# 'email_hash': '636533855faff9ced3e4deac769d0bd3',
+# 'fullname': None,
+# 'id': u'ee5afe16-1674-4c38-9100-d47d7cee610d',
+# 'name': u'admin',
+# 'number_created_packages': 0L,
+# 'number_of_edits': 1L,
+# 'state': u'active',
+# 'sysadmin': False}
+#Added admin as sysadmin
+# Take the api key and set it in the config.ini
+python3 createSchema.py
+python3 createDatabase_with_orga.py
+
+
+# DSPACE2
+vagrant plugin install vagrant-vbguest
+vagrant plugin install vagrant-disksize
+vagrant up
+#==> vagrant-dspace: http://localhost:8080/xmlui/
+#==> vagrant-dspace: LOGIN: 'dspacedemo+admin@gmail.com', PASSWORD: 'vagrant'
+#==> vagrant-dspace: 
+#==> vagrant-dspace: The DSpace database is accessible via local port 5432.
+#==> vagrant-dspace: You can SSH into the new VM via 'vagrant ssh'
+# SSH configuration wasn't necessary for me (GitHub SSH user was already configured)
+vagrant ssh
+cd dspace-src/dspace-rest/src/main/webapp/WEB-INF
+# Comment out securityConstraint
+cd ~/dspace-src/
+mvn clean package
+cd dspace/target/dspace-installer
+ant update
+sudo service tomcat7 restart

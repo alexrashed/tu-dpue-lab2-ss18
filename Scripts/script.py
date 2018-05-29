@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import configparser
 import argparse
 import sys
@@ -11,55 +12,91 @@ args = parser.parse_args()
 
 if args.command != "lckan" and args.command != "ldspace" and args.command != "migrate":
     print("Not a valid command, please check help.")
-    sys.exit(0)
+    sys.exit(1)
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 ckan_server_URL = config['CKAN']['ckan_server_URL']
+ckan_api_key = config['CKAN']['ckan_api_key']
 dspace_server_URL = config['DSPACE']['dspace_server_URL']
-if args.command == "lckan":
-    myResponse = requests.get(ckan_server_URL + "/api/3/action/package_list")
-    if(myResponse.ok):
-        jData = myResponse.json()
-        if jData["success"]:
-            if jData["result"] == []:
+
+
+def list_ckan():
+    if not ckan_server_URL:
+        print("ckan_server_URL not configured in config.ini")
+        sys.exit(1)
+
+    ckan_response = requests.get(ckan_server_URL + "/api/3/action/package_list")
+    if ckan_response.ok:
+        json_data = ckan_response.json()
+        if json_data["success"]:
+            if not json_data["result"]:
                 print("The Repository has no items.")
             else:
-                if args.verbose:
-                    for key in jData["result"]:
-                        verboseResponse = requests.get(ckan_server_URL + "/api/3/action/package_show?id=" + key)
-                        if(verboseResponse.ok):
-                            verboseJson = verboseResponse.json()
-                            print(json.dumps(verboseJson["result"], indent=4, sort_keys=False))
-                else:
-                    for key in jData["result"]:
+                for key in json_data["result"]:
+                    if args.verbose:
+                        verbose_response = requests.get(ckan_server_URL + "/api/3/action/package_show?id=" + key)
+                        if verbose_response.ok:
+                            verbose_json = verbose_response.json()
+                            print(json.dumps(verbose_json["result"], indent=4, sort_keys=False))
+                    else:
                         print(key)
-    else: 
+    else:
         print("Could not connect to " + ckan_server_URL + "/api/3/action/package_list")
-if args.command == "ldspace":
+
+
+def list_dspace():
+    if not dspace_server_URL:
+        print("dspace_server_URL not configured in config.ini")
+        sys.exit(1)
+
     headers = {'Accept': 'application/json'}
-    myResponse = requests.get(dspace_server_URL + "/rest/items", headers)
-    if(myResponse.ok):
-        jData = myResponse.json()
-        print(jData)
-        if jData == []:
+    dspace_response = requests.get(dspace_server_URL + "/rest/items", headers)
+    if dspace_response.ok:
+        json_data = dspace_response.json()
+        if not json_data:
             print("The Repository has no items")
         else:
-            if args.verbose:
-                for key in jData:
+            for key in json_data:
+                if args.verbose:
                     print(json.dumps(key, indent=4, sort_keys=False))
-            else:
-                for key in jData:
+                else:
                     print(key['name'])
+
     else:
         print("Could not connect to " + dspace_server_URL + "/rest/items")
-if args.command == "migrate":
-    #TODO
-    print()
 
 
+def migrate():
+    if not ckan_server_URL:
+        print("ckan_server_URL not configured in config.ini")
+        sys.exit(1)
+    if not ckan_api_key:
+        print("ckan_api_key not configured in config.ini")
+        sys.exit(1)
+    print('TODO')
+
+    # ckan_response = requests.get(ckan_server_URL + "/api/3/action/package_list", headers={'Authorization': ckan_api_key})
+    # if ckan_response.ok:
+
+    # Create the new schema in CKAN
+    # Iterate over the organisations
+        # Create the organisation
+        # Iterate over the items
+            # If item is in a group: Collection name is group
+            # Else: Collection name is default (maybe orga name?)
+            # if collection name does not exist, create
+            # Create the Item in DSPACE
+            # Download the file from CKAN, upload the file (bitstream) to DSPACE
+                # https://stackoverflow.com/questions/33055773/adding-a-new-bitstream-to-dspace-item-using-dspace-rest-api
+                # https://github.com/DSpace/DSpace/blob/master/dspace-rest/src/main/java/org/dspace/rest/BitstreamResource.java
+            # Add the additional metadata to the DSPACE item
+                # POST /items/{item id}/metadata - Add metadata to item. You must post an array of MetadataEntry.
 
 
-
-
-
-
+if args.command == "lckan":
+    list_ckan()
+elif args.command == "ldspace":
+    list_dspace()
+elif args.command == "migrate":
+    migrate()
