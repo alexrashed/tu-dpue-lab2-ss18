@@ -316,10 +316,10 @@ def create_bitstreams(dspace_session, item_id, resource):
     bitstream_id = dspace_response.json()["uuid"]
     print("Created DSpace bitstream with ID " + bitstream_id)
 
-    dspace_headers = {'Content-Type': 'multipart/form-data', 'Accept': 'application/json'}
+    dspace_headers = {'Content-Type': 'application/octet-stream', 'Accept': 'application/json'}
     data = urllib.request.urlopen(resource["url"]).read()
-    dspace_response = dspace_session.put(dspace_server_URL + "/rest/bitstreams/" + bitstream_id + "/data?name=" + resource["name"],
-                                          headers=dspace_headers, files={'bitstreams': data})
+    dspace_response = dspace_session.put(dspace_server_URL + "/rest/bitstreams/" + bitstream_id + "/data",
+                                          headers=dspace_headers, data=data)
     if not dspace_response.ok:
         print("DSpace bitstream data could not be written: " + str(dspace_response.status_code))
         sys.exit(1)
