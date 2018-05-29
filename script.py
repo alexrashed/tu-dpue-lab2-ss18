@@ -249,7 +249,6 @@ def create_items(dspace_session):
         }
 
         for entry in package['extras']:
-            print(entry)
             try:
                 if entry['key'] == 'Bitrate':
                     data_dict['metadata'].append({'key': 'audiovisual.Bitrate.Bitrate', 'value': entry['value']})
