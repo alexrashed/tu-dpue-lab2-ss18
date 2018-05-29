@@ -49,3 +49,6 @@ mvn clean package
 cd dspace/target/dspace-installer
 ant update
 sudo service tomcat7 restart
+
+# Create something in the web ui to trigger re-indexing!"
+# ANNAHME: Erste Group wird als collection verwendet!
